@@ -5,14 +5,27 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+// Routing
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+
+// Custom
+import { EventsModule } from './events/events.module';
+import { ArticlesModule } from './articles/articles.module';
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes),
+    EventsModule,
+    ArticlesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
